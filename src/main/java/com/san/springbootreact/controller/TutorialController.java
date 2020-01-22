@@ -21,7 +21,7 @@ import com.san.springbootreact.service.TutorialService;
 
 @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/auth/all")
 public class TutorialController {
 
 	@Autowired

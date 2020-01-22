@@ -1,9 +1,18 @@
 package com.san.springbootreact.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.san.springbootreact.model.User;
 
-public interface UserRepository extends CrudRepository<User, Integer> {
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
 
+	Optional<?> findByUsername(String username);
+
+	Boolean existsByUsername(String username);
+
+	Boolean existsByEmail(String email);
 }
